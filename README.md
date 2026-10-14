@@ -12,7 +12,7 @@ A personal portfolio website built with Django. The site displays project cards 
 
 ## Requirements
 
-- Python 3.10 or later
+- Python 3.12 or later (required by Django 6.1.1)
 - Dependencies listed in `requirements.txt`
 
 ## Setup
