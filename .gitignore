@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local database and environment configuration
+db.sqlite3
+.env
+.env.*
+!.env.example
+
+# Test and editor artifacts
+.pytest_cache/
+.coverage
+.idea/
+.vscode/

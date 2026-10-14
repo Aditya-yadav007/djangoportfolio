@@ -1,0 +1,50 @@
+[
+{
+  "model": "Aditya.project",
+  "pk": 2,
+  "fields": {
+    "title": "Twitter Sentiment Analysis",
+    "category": "AI / Machine Learning",
+    "description": "A machine-learning application that analyzes tweets and classifies their sentiment as Positive, Negative, or Neutral. The Streamlit interface supports individual tweet analysis as well as bulk CSV processing with sentiment-distribution visualizations.",
+    "image_url": "https://raw.githubusercontent.com/Aditya-yadav007/twitter-sentiment-analysis/main/assets/banner.jpg",
+    "project_url": "https://github.com/Aditya-yadav007/twitter-sentiment-analysis",
+    "sort_order": 2
+  }
+},
+{
+  "model": "Aditya.project",
+  "pk": 3,
+  "fields": {
+    "title": "Personal Portfolio",
+    "category": "Web Development",
+    "description": "A personal portfolio website designed to showcase professional skills, projects, experience, and resume information through a responsive web interface.",
+    "image_url": "",
+    "project_url": "https://github.com/Aditya-yadav007/Portfolio",
+    "sort_order": 3
+  }
+},
+{
+  "model": "Aditya.project",
+  "pk": 4,
+  "fields": {
+    "title": "My Game",
+    "category": "JavaScript / Web Development",
+    "description": "A browser-based JavaScript game project created to demonstrate interactive web development, JavaScript logic, event handling, and user interaction.",
+    "image_url": "",
+    "project_url": "https://github.com/Aditya-yadav007/myGame",
+    "sort_order": 4
+  }
+},
+{
+  "model": "Aditya.project",
+  "pk": 5,
+  "fields": {
+    "title": "AK",
+    "category": "Web Development",
+    "description": "A web development project demonstrating the creation of a frontend web interface using HTML and web technologies.",
+    "image_url": "",
+    "project_url": "https://github.com/Aditya-yadav007/AK",
+    "sort_order": 5
+  }
+}
+]

@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ee">
+    <meta name="description" content="Aditya's portfolio: thoughtful digital experiences and selected work.">
+    <title>Aditya — Portfolio</title>
+    <style>
+        :root {
+            --paper: #f5f4ee;
+            --ink: #1d302a;
+            --muted: #68746e;
+            --line: #deded5;
+            --accent: #ca6547;
+            --serif: Georgia, "Times New Roman", serif;
+            --sans: "Segoe UI", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: var(--sans);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        .wrap {
+            width: min(1080px, calc(100% - 48px));
+            margin: auto;
+        }
+
+        .skip {
+            position: absolute;
+            top: -60px;
+            left: 12px;
+            padding: 12px;
+            background: var(--ink);
+            color: white;
+        }
+
+        .skip:focus {
+            top: 12px;
+        }
+
+        header {
+            border-bottom: 1px solid var(--line);
+        }
+
+        nav {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .brand-mark {
+            width: 36px;
+            height: 36px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--ink);
+            color: var(--paper);
+            font: 20px var(--serif);
+        }
+
+        .brand-name {
+            font-size: 12px;
+            font-weight: 750;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .kicker {
+            margin: 0 0 18px;
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 750;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+        }
+
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        .about-title {
+            margin: 0;
+            font: 400 clamp(38px, 5vw, 58px)/1.04 var(--serif);
+            letter-spacing: -.04em;
+        }
+
+        .button {
+            min-height: 46px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 17px;
+            border: 1px solid var(--ink);
+            border-radius: 3px;
+            background: var(--ink);
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform .2s, background .2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            background: #2b443b;
+        }
+
+        section {
+            border-top: 1px solid var(--line);
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 70px;
+            padding-block: 80px;
+        }
+
+        h2 {
+            margin-bottom: 0;
+            font: 400 clamp(34px, 4vw, 48px)/1.08 var(--serif);
+            letter-spacing: -.035em;
+        }
+
+        .about-copy {
+            max-width: 630px;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        .about-copy p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 99px;
+            color: var(--ink);
+            font-size: 11px;
+        }
+
+        .work {
+            padding-block: 78px 88px;
+        }
+
+        .work-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .work-head h2 {
+            max-width: 510px;
+        }
+
+        .work-note {
+            max-width: 270px;
+            margin-bottom: 3px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .project {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: #fbfaf7;
+        }
+
+        .project-visual {
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(140deg, #dce4d4, #becbb8);
+        }
+
+        .project:nth-child(4n + 2) .project-visual,
+        .project:nth-child(4n + 3) .project-visual {
+            background: linear-gradient(140deg, #eadbce, #d6b8a3);
+        }
+
+        .project:nth-child(4n) .project-visual {
+            background: linear-gradient(140deg, #d6dfe4, #b1c3c5);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+        }
+
+        .project-monogram {
+            width: 118px;
+            aspect-ratio: 1;
+            display: grid;
+            place-items: center;
+            border-radius: 50% 50% 4px 50%;
+            background: var(--ink);
+            color: var(--paper);
+            box-shadow: 0 18px 38px #1d302a26;
+            font: 64px var(--serif);
+            transform: rotate(-8deg);
+        }
+
+        .project-info {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 19px 20px 20px;
+        }
+
+        .project-index {
+            margin-bottom: 9px;
+            color: var(--accent);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            margin-bottom: 6px;
+            font: 400 24px var(--serif);
+        }
+
+        .project-info p:last-child {
+            max-width: 350px;
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.65;
+        }
+
+        .project-open {
+            flex: 0 0 auto;
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            text-decoration: none;
+        }
+
+        .project-open:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .empty-projects {
+            grid-column: 1 / -1;
+            padding: 36px;
+            border: 1px dashed var(--line);
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .empty-projects p {
+            margin: 0;
+        }
+
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+            padding-block: 64px;
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        .contact h2 {
+            max-width: 600px;
+            margin-bottom: 12px;
+            font-size: clamp(42px, 6vw, 64px);
+        }
+
+        .contact p:last-child {
+            max-width: 410px;
+            margin-bottom: 0;
+            color: #c3cec3;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .contact .kicker {
+            color: #d99674;
+        }
+
+        .contact .button {
+            flex: 0 0 auto;
+            border-color: var(--paper);
+            background: var(--paper);
+            color: var(--ink);
+        }
+
+        .contact .button:hover {
+            background: white;
+        }
+
+        footer {
+            padding-block: 18px;
+            background: var(--ink);
+            color: #aab8ad;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #f5f4ee2e;
+            font-size: 11px;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 720px) {
+            .wrap {
+                width: min(100% - 36px, 560px);
+            }
+
+            .about-title {
+                font-size: clamp(38px, 8vw, 50px);
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding-block: 64px;
+            }
+
+            .work-head {
+                align-items: start;
+                flex-direction: column;
+            }
+
+            .contact {
+                align-items: start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .wrap {
+                width: calc(100% - 32px);
+            }
+
+            nav {
+                min-height: 68px;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            .about {
+                padding-block: 54px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+        <nav class="wrap" aria-label="Main navigation">
+            <a class="brand" href="#top" aria-label="Aditya, home"><span class="brand-mark"
+                    aria-hidden="true">A</span><span class="brand-name">Aditya</span></a>
+            <div class="nav-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Let’s
+                    talk ↗</a></div>
+        </nav>
+    </header>
+    <main id="main">
+        <section class="about wrap" id="about" aria-labelledby="about-title">
+            <div>
+                <p class="kicker">01 — About me</p>
+                <h1 class="about-title" id="about-title">Hi, I’m Aditya Yadav.</h1>
+            </div>
+            <div class="about-copy">
+                <p>I’m a CSE ’26 web developer building full-stack web and cross-platform mobile applications.</p>
+                <p>I’m currently learning python and AIML as I continue exploring mobile and server-side development.
+                </p>
+                <div class="tags" aria-label="Areas of focus"><span class="tag">Python — learning</span><span
+                        class="tag">AIML — learning</span><span class="tag">Web development — exploring</span></div>
+            </div>
+        </section>
+
+        <section class="work wrap" id="projects" aria-labelledby="work-title">
+            <div class="work-head">
+                <div>
+                    <p class="kicker">02 — Projects</p>
+                    <h2 id="work-title">A few things I’ve been working on.</h2>
+                </div>
+                <p class="work-note">A small collection of projects and concepts, made with curiosity and attention to
+                    detail.</p>
+            </div>
+            <div class="projects">
+                {% for project in projects %}
+                <article class="project">
+                    <div class="project-visual">
+                        {% if project.image_url %}
+                        <img class="project-image" src="{{ project.image_url }}"
+                            alt="{{ project.title }} project preview" loading="lazy">
+                        {% else %}
+                        <span class="project-monogram" aria-hidden="true">{{ project.title|first|upper }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <p class="project-index">{{ forloop.counter|stringformat:"02d" }} / {{
+                                project.category|default:"Project" }}</p>
+                            <h3>{{ project.title }}</h3>
+                            <p>{{ project.description }}</p>
+                        </div>
+                        {% if project.project_url %}
+                        <a class="project-open" href="{{ project.project_url }}" target="_blank"
+                            rel="noopener noreferrer" aria-label="Open {{ project.title }} project">↗</a>
+                        {% endif %}
+                    </div>
+                </article>
+                {% empty %}
+                <div class="empty-projects">
+                    <p>New work is on the way. Check back soon.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+            <div class="wrap" style="display:flex;justify-content:space-between;align-items:end;gap:30px;">
+                <div>
+                    <p class="kicker">03 — Get in touch</p>
+                    <h2 id="contact-title">Have something good in mind?</h2>
+                    <p>I’m always glad to hear about thoughtful projects, new ideas, or interesting conversations.</p>
+                </div>
+                <!-- Replace hello@example.com with your preferred contact email. -->
+                <a class="button" href="mailto:hello@example.com">Say hello <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer wrap">
+            <p>© 2026 Aditya. Made with care.</p>
+            <p>Back to the top <a href="#top" aria-label="Back to top">↑</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
